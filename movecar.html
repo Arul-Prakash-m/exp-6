@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moving Car</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #f4f4f4;
+    }
+
+    h1, h2 {
+        color: #333;
+    }
+
+    #time, #result {
+        font-size: 24px;
+        font-weight: bold;
+        color: #0066cc;
+    }
+
+    p {
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body onload="init()">
+
+    <img id="img" src="john-wick-boss.jpg" width="200"><br><br>
+
+    <button onclick="moveRight()">Move</button>
+    <button onclick="stopCar()">Stop</button>
+
+    <script>
+        var imgObj;
+        var animate;
+
+        function init() {
+            imgObj = document.getElementById("img");
+            imgObj.style.position = "relative";
+            imgObj.style.left = "0px";
+        }
+
+        function moveRight() {
+            imgObj.style.left =
+                parseInt(imgObj.style.left) + 1 + "px";
+
+            animate = setTimeout(moveRight, 10);
+        }
+
+        function stopCar() {
+            clearTimeout(animate);
+            imgObj.style.left = "0px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Array of Objects</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 50px;
+            text-align: center;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .student {
+            margin: 15px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .before {
+            color: green;
+            font-weight: bold;
+        }
+
+        .after {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Student Details</h1>
+        <div id="output"></div>
+    </div>
+
+    <script>
+
+        // Create an array of objects
+        var student = [
+            {
+                name: "Arul Prakash M",
+                regno: "URK24CS9043",
+                dob: new Date("2006-08-21")
+            },
+            {
+                name: "Lebron",
+                regno: "URK24CS9006",
+                dob: new Date("2002-01-05")
+            },
+            {
+                name: "Kobe",
+                regno: "URK24CS9024",
+                dob: new Date("1998-08-15")
+            }
+        ];
+
+        var result = "";
+
+        // Iterate through the array
+        for (var i = 0; i < student.length; i++) {
+
+            var year = student[i].dob.getFullYear();
+
+            result += "<div class='student'>";
+            result += "<p>" + student[i].name +
+                      "'s Register Number is " +
+                      student[i].regno + "</p>";
+
+            result += "<p>Year of Birth: " + year + "</p>";
+
+            if (year < 2000) {
+                result += "<p class='before'>Born Before 2000</p>";
+            } else {
+                result += "<p class='after'>Born After 2000</p>";
+            }
+
+            result += "</div>";
+        }
+
+        document.getElementById("output").innerHTML = result;
+
+    </script>
+
+</body>
+</html>

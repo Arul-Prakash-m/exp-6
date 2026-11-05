@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #f4f4f4;
+    }
+
+    h1, h2 {
+        color: #333;
+    }
+
+    #time, #result {
+        font-size: 24px;
+        font-weight: bold;
+        color: #0066cc;
+    }
+
+    p {
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <h1>Digital Clock!</h1>
+    <span id="time"></span>
+
+    <script>
+        function display() {
+            var d = new Date();
+            var time = d.getHours() + ":" +
+                       d.getMinutes() + ":" +
+                       d.getSeconds();
+            document.getElementById("time").innerHTML = time;
+        }
+
+        setInterval(display, 1000);
+    </script>
+</body>
+</html>
